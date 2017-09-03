@@ -9,7 +9,7 @@ var session = require('express-session');
 var cors = require('cors');
 
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://127.0.0.1:27017/smartcms');
+mongoose.connect('mongodb://arjunw7:13bcb0062@ds119014.mlab.com:19014/heroku_t8hsp0ln');
 require('./models/models');
 
 var api = require('./routes/api');
