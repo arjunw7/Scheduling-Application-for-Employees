@@ -1,37 +1,28 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
-var bookingSchema = new mongoose.Schema({
-    bookingType: String,
-    journeyType: String,
-    pickupLocation: String,
-    dropLocation: String,
-    departDate: String,
-    returnDate: String,
-    departTime: String,
-    returnTime: String,
-    passengers: String,
-    carType: String,
-    customerName: String,
-    customerEmail: String,
-    customerContact: String,
-    customerAddress: String,
-    userId: String,
-    status: {type: String, default: 'unpaid'},
-    payment_id: {type: String, default: '-'},
-    payment_successful_id: {type: String, default: '-'},
-    otp: String
+var filesSchema = new mongoose.Schema({
+    username: String,
+    managerId: String,
+    userFullName: String,
+    monday: String,
+    tuesday: String,
+    wednesday: String,
+    thursday: String,
+    friday: String,
+    saturday: String,
+    sunday: String
 });
 
 var userSchema = new mongoose.Schema({
     fullName: String,
     email: String,
-    contact: Number,
     username: String,
-    password: String, //hash created from password
+    password: String,
     token: String,
+    managerId: String,
     resetPasswordToken: String,
     resetPasswordExpires: Date
 });
 
+mongoose.model('File', filesSchema);
 mongoose.model('User', userSchema);
-mongoose.model('Booking', bookingSchema);
